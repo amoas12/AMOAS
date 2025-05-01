@@ -1,21 +1,532 @@
+`index.html`
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AMOAS Real Estate</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pVU6T1ZwQAt5cbWxRWrA5Jv4ANey28vTyj+tYksZ6MiLcP6WZd9%2BmkbUZxV54RvN/yi4izo1CSMu5HV0pPglCg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
 </head>
-<body class="font-[Poppins] bg-gray-100 text-gray-800">
-  <header class="bg-indigo-700 text-white p-4 text-center text-3xl font-bold">AMOAS</header>
-  <section class="p-10 text-center">
-    <h2 class="text-2xl font-semibold mb-4">Welcome to AMOAS Real Estate</h2>
-    <p>Your trusted partner for property leasing, sales, and hostels</p>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header / Navbar -->
+  <header class="fixed w-full bg-white shadow-md z-30">
+    <div class="container mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#home" class="text-3xl font-bold text-indigo-600">AMOAS</a>
+      <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
+        <a href="#home" class="hover:text-indigo-600 transition">Home</a>
+        <a href="#property-lease" class="hover:text-indigo-600 transition">Property for Lease</a>
+        <a href="#property-sale" class="hover:text-indigo-600 transition">Property for Sale</a>
+        <a href="#student-hostels" class="hover:text-indigo-600 transition">Student Hostels</a>
+        <a href="#land" class="hover:text-indigo-600 transition">Land for Sale & Lease</a>
+        <a href="#agents" class="hover:text-indigo-600 transition">Customer Agents</a>
+        <a href="#about" class="hover:text-indigo-600 transition">About Us</a>
+        <a href="#contact" class="hover:text-indigo-600 transition">Contact Us</a>
+      </nav>
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none" aria-label="Toggle menu">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden bg-white shadow-md md:hidden px-6 py-4 space-y-4 font-semibold text-gray-700">
+      <a href="#home" class="block hover:text-indigo-600 transition">Home</a>
+      <a href="#property-lease" class="block hover:text-indigo-600 transition">Property for Lease</a>
+      <a href="#property-sale" class="block hover:text-indigo-600 transition">Property for Sale</a>
+      <a href="#student-hostels" class="block hover:text-indigo-600 transition">Student Hostels</a>
+      <a href="#land" class="block hover:text-indigo-600 transition">Land for Sale & Lease</a>
+      <a href="#agents" class="block hover:text-indigo-600 transition">Customer Agents</a>
+      <a href="#about" class="block hover:text-indigo-600 transition">About Us</a>
+      <a href="#contact" class="block hover:text-indigo-600 transition">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section
+    id="home"
+    class="min-h-screen flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('https://images.unsplash.com/photo-1501183638714-132f52c3a5da?auto=format&fit=crop&w=1470&q=80');"
+  >
+    <div class="bg-black bg-opacity-50 p-8 rounded max-w-3xl text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Find Your Dream Home with AMOAS</h1>
+      <p class="mb-8 text-lg md:text-xl font-semibold">Explore the best properties for sale and lease with expert agents.</p>
+      <a href="#property-sale" class="inline-block px-8 py-4 bg-indigo-600 rounded shadow-lg font-semibold hover:bg-indigo-700 transition">Browse Listings</a>
+    </div>
   </section>
-  <footer class="bg-indigo-700 text-white text-center p-4 mt-10">
-    &copy; 2025 AMOAS. All rights reserved.
+
+  <!-- Property for Lease Section -->
+  <section id="property-lease" class="container mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-indigo-600 mb-8 text-center">Property for Lease</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Property Card -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=640&q=80" alt="Modern Apartment" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Modern 2 Bedroom Apartment</h3>
+          <p class="text-gray-600 mb-3">Nairobi central, fully furnished, close to amenities.</p>
+          <div class="flex items-center space-x-4 text-gray-600 mb-3">
+            <span><i class="fas fa-bed"></i> 2 Bedrooms</span>
+            <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+            <span><i class="fas fa-ruler-combined"></i> 90m²</span>
+          </div>
+          <p class="text-indigo-700 font-bold text-lg">KES 35,000 / month</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1560448075-f2e7d2f69b89?auto=format&fit=crop&w=640&q=80" alt="Cozy Bungalow" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Cozy 3 Bedroom Bungalow</h3>
+          <p class="text-gray-600 mb-3">Suburban area, large garden, secure neighborhood.</p>
+          <div class="flex items-center space-x-4 text-gray-600 mb-3">
+            <span><i class="fas fa-bed"></i> 3 Bedrooms</span>
+            <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+            <span><i class="fas fa-ruler-combined"></i> 120m²</span>
+          </div>
+          <p class="text-indigo-700 font-bold text-lg">KES 50,000 / month</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=640&q=80" alt="Luxury Condo" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Luxury 1 Bedroom Condo</h3>
+          <p class="text-gray-600 mb-3">Prime location, pool access, modern apartment amenities.</p>
+          <div class="flex items-center space-x-4 text-gray-600 mb-3">
+            <span><i class="fas fa-bed"></i> 1 Bedroom</span>
+            <span><i class="fas fa-bath"></i> 1 Bathroom</span>
+            <span><i class="fas fa-ruler-combined"></i> 70m²</span>
+          </div>
+          <p class="text-indigo-700 font-bold text-lg">KES 40,000 / month</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Property for Sale Section -->
+  <section id="property-sale" class="bg-gray-100 py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-indigo-600 mb-8 text-center">Property for Sale</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=640&q=80" alt="Elegant House" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Elegant 4 Bedroom House</h3>
+            <p class="text-gray-600 mb-3">Spacious compound, modern finishes, great neighborhood.</p>
+            <div class="flex items-center space-x-4 text-gray-600 mb-3">
+              <span><i class="fas fa-bed"></i> 4 Bedrooms</span>
+              <span><i class="fas fa-bath"></i> 3 Bathrooms</span>
+              <span><i class="fas fa-ruler-combined"></i> 200m²</span>
+            </div>
+            <p class="text-indigo-700 font-bold text-lg">KES 12,000,000</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1600585154440-9a5f5b85d23e?auto=format&fit=crop&w=640&q=80" alt="Townhouse" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Modern 3 Bedroom Townhouse</h3>
+            <p class="text-gray-600 mb-3">Gated community, all new appliances included.</p>
+            <div class="flex items-center space-x-4 text-gray-600 mb-3">
+              <span><i class="fas fa-bed"></i> 3 Bedrooms</span>
+              <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+              <span><i class="fas fa-ruler-combined"></i> 150m²</span>
+            </div>
+            <p class="text-indigo-700 font-bold text-lg">KES 8,500,000</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1501184109334-cd02c1aace42?auto=format&fit=crop&w=640&q=80" alt="Family House" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Charming 3 Bedroom Family House</h3>
+            <p class="text-gray-600 mb-3">Close to schools and shopping centers.</p>
+            <div class="flex items-center space-x-4 text-gray-600 mb-3">
+              <span><i class="fas fa-bed"></i> 3 Bedrooms</span>
+              <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+              <span><i class="fas fa-ruler-combined"></i> 140m²</span>
+            </div>
+            <p class="text-indigo-700 font-bold text-lg">KES 7,800,000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Hostels Section -->
+  <section id="student-hostels" class="container mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-indigo-600 mb-8 text-center">Student Hostels</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1576671089238-3f4ebca2adda?auto=format&fit=crop&w=640&q=80" alt="Shared Student Hostel" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Affordable Shared Hostel</h3>
+          <p class="text-gray-600 mb-3">Close to university, furnished, internet included.</p>
+          <div class="flex items-center space-x-4 text-gray-600 mb-3">
+            <span><i class="fas fa-users"></i> 4 beds/room</span>
+            <span><i class="fas fa-house"></i> Communal kitchen</span>
+          </div>
+          <p class="text-indigo-700 font-bold text-lg">KES 8,000 / month</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1603046891793-104ca634a0d3?auto=format&fit=crop&w=640&q=80" alt="Private Room Hostel" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Private Room Hostel</h3>
+          <p class="text-gray-600 mb-3">Single rooms, self-contained, safe and quiet.</p>
+          <div class="flex items-center space-x-4 text-gray-600 mb-3">
+            <span><i class="fas fa-bed"></i> 1 bed</span>
+            <span><i class="fas fa-wifi"></i> High speed internet</span>
+          </div>
+          <p class="text-indigo-700 font-bold text-lg">KES 15,000 / month</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1580561447483-26bc6aa4a165?auto=format&fit=crop&w=640&q=80" alt="Modern Student Hostel" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Modern Student Hostel</h3>
+          <p class="text-gray-600 mb-3">Fully furnished, communal lounge, study areas.</p>
+          <div class="flex items-center space-x-4 text-gray-600 mb-3">
+            <span><i class="fas fa-bed"></i> 2 beds/room</span>
+            <span><i class="fas fa-tv"></i> Entertainment lounge</span>
+          </div>
+          <p class="text-indigo-700 font-bold text-lg">KES 12,500 / month</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Land for Sale & Lease Section -->
+  <section id="land" class="bg-gray-100 py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-indigo-600 mb-8 text-center">Land for Sale & Lease</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=640&q=80" alt="Plot of Land" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Plot of Land - Kiambu County</h3>
+            <p class="text-gray-600 mb-3">Affordable, close to highways and amenities.</p>
+            <p class="text-indigo-700 font-bold text-lg">KES 3,000,000 (Sale)</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=640&q=80" alt="Land for lease" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Land for Lease - Machakos</h3>
+            <p class="text-gray-600 mb-3">Ideal for farming or business development.</p>
+            <p class="text-indigo-700 font-bold text-lg">KES 30,000 / month (Lease)</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1563720229266-4b80cf31abfa?auto=format&fit=crop&w=640&q=80" alt="Commercial Land" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Commercial Land - Nairobi CBD</h3>
+            <p class="text-gray-600 mb-3">Prime location, perfect for commercial building.</p>
+            <p class="text-indigo-700 font-bold text-lg">KES 15,000,000 (Sale)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Agents Section -->
+  <section id="agents" class="container mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-indigo-600 mb-8 text-center">Customer Agents</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Agent Card -->
+      <div class="bg-white rounded-lg p-6 text-center shadow-lg">
+        <img
+          src="https://randomuser.me/api/portraits/men/32.jpg"
+          alt="Agent John Doe"
+          class="mx-auto rounded-full w-32 h-32 object-cover mb-4"
+          loading="lazy"
+        />
+        <h3 class="text-xl font-semibold mb-2">John Doe</h3>
+        <p class="text-gray-600 mb-2">Senior Agent</p>
+        <p class="mb-4 italic text-sm text-gray-500">"Helping you find your dream home with care."</p>
+        <div class="flex justify-center space-x-4 text-indigo-600 text-lg">
+          <a href="tel:+254700123456" aria-label="Call John Doe" title="Call John Doe"><i class="fas fa-phone"></i></a>
+          <a href="mailto:johndoe@amoas.co.ke" aria-label="Email John Doe" title="Email John Doe"><i class="fas fa-envelope"></i></a>
+          <a href="#" aria-label="LinkedIn John Doe" title="LinkedIn John Doe"><i class="fab fa-linkedin"></i></a>
+          <a
+            href="https://wa.me/254700123456"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp John Doe"
+            title="WhatsApp John Doe"
+            class="hover:text-green-500"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg p-6 text-center shadow-lg">
+        <img
+          src="https://randomuser.me/api/portraits/women/44.jpg"
+          alt="Agent Mary Jane"
+          class="mx-auto rounded-full w-32 h-32 object-cover mb-4"
+          loading="lazy"
+        />
+        <h3 class="text-xl font-semibold mb-2">Mary Jane</h3>
+        <p class="text-gray-600 mb-2">Property Consultant</p>
+        <p class="mb-4 italic text-sm text-gray-500">"Your trusted partner in property investment."</p>
+        <div class="flex justify-center space-x-4 text-indigo-600 text-lg">
+          <a href="tel:+254712345678" aria-label="Call Mary Jane" title="Call Mary Jane"><i class="fas fa-phone"></i></a>
+          <a href="mailto:maryjane@amoas.co.ke" aria-label="Email Mary Jane" title="Email Mary Jane"><i class="fas fa-envelope"></i></a>
+          <a href="#" aria-label="LinkedIn Mary Jane" title="LinkedIn Mary Jane"><i class="fab fa-linkedin"></i></a>
+          <a
+            href="https://wa.me/254712345678"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp Mary Jane"
+            title="WhatsApp Mary Jane"
+            class="hover:text-green-500"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg p-6 text-center shadow-lg">
+        <img
+          src="https://randomuser.me/api/portraits/men/76.jpg"
+          alt="Agent David Smith"
+          class="mx-auto rounded-full w-32 h-32 object-cover mb-4"
+          loading="lazy"
+        />
+        <h3 class="text-xl font-semibold mb-2">David Smith</h3>
+        <p class="text-gray-600 mb-2">Real Estate Agent</p>
+        <p class="mb-4 italic text-sm text-gray-500">"Committed to finding the perfect property for you."</p>
+        <div class="flex justify-center space-x-4 text-indigo-600 text-lg">
+          <a href="tel:+254798765432" aria-label="Call David Smith" title="Call David Smith"><i class="fas fa-phone"></i></a>
+          <a href="mailto:davidsmith@amoas.co.ke" aria-label="Email David Smith" title="Email David Smith"><i class="fas fa-envelope"></i></a>
+          <a href="#" aria-label="LinkedIn David Smith" title="LinkedIn David Smith"><i class="fab fa-linkedin"></i></a>
+          <a
+            href="https://wa.me/254798765432"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp David Smith"
+            title="WhatsApp David Smith"
+            class="hover:text-green-500"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="bg-indigo-600 text-white py-16">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <h2 class="text-4xl font-bold mb-6">About AMOAS</h2>
+      <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+        AMOAS is a trusted real estate company dedicated to connecting clients with the perfect properties to suit their needs.
+        With years of experience in the Kenyan property market, our professional agents provide personalized service whether you’re
+        buying, leasing, or investing in property. Our mission is to make your real estate journey seamless, transparent, and successful.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="container mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-indigo-600 mb-8 text-center">Contact Us</h2>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+      <form class="bg-white rounded-lg shadow-lg p-8" action="#" method="POST" novalidate>
+        <div class="mb-6">
+          <label for="name" class="block font-semibold mb-2 text-gray-700">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            placeholder="Your full name"
+          />
+        </div>
+        <div class="mb-6">
+          <label for="email" class="block font-semibold mb-2 text-gray-700">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            placeholder="Your email address"
+          />
+        </div>
+        <div class="mb-6">
+          <label for="message" class="block font-semibold mb-2 text-gray-700">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            placeholder="Your message"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-indigo-600 text-white font-semibold rounded px-6 py-3 hover:bg-indigo-700 transition"
+        >
+          Send Message
+        </button>
+      </form>
+      <div class="rounded-lg overflow-hidden shadow-lg">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.567962972286!2d36.80257441532696!3d-1.292065899999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10a30750d18b%3A0xae06b7d93525b1e5!2sNairobi%20CBD!5e0!3m2!1sen!2ske!4v1692798502514!5m2!1sen!2ske"
+          width="100%"
+          height="100%"
+          style="min-height:400px; border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Google Maps Nairobi CBD"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <p>&copy; 2024 AMOAS. All Rights Reserved.</p>
+      <div class="space-x-6 text-xl">
+        <a href="#" aria-label="Facebook" class="hover:text-indigo-600"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter" class="hover:text-indigo-600"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram" class="hover:text-indigo-600"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-indigo-600"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
   </footer>
+
+  <!-- Chatbot Floating Button and Widget -->
+  <button
+    id="chatbot-toggle"
+    aria-label="Open Chatbot"
+    title="Chat with us"
+    class="fixed bottom-6 right-6 bg-indigo-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-indigo-700 transition z-50"
+  >
+    <i class="fas fa-comments fa-lg"></i>
+  </button>
+
+  <div
+    id="chatbot"
+    class="fixed bottom-20 right-6 w-80 max-w-full bg-white rounded-lg shadow-xl border border-gray-300 flex flex-col overflow-hidden hidden z-50"
+  >
+    <div class="bg-indigo-600 text-white p-4 flex justify-between items-center">
+      <h3 class="font-semibold">AMOAS Chatbot</h3>
+      <button id="chatbot-close" aria-label="Close Chatbot" class="focus:outline-none hover:text-gray-300">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div id="chatbot-messages" class="flex-1 p-4 overflow-y-auto text-sm text-gray-800"></div>
+    <form id="chatbot-form" class="flex border-t border-gray-300">
+      <input
+        type="text"
+        id="chatbot-input"
+        placeholder="Type your message..."
+        autocomplete="off"
+        required
+        class="flex-grow px-4 py-2 focus:outline-none"
+      />
+      <button type="submit" class="bg-indigo-600 text-white px-4 hover:bg-indigo-700 transition">
+        Send
+      </button>
+    </form>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Chatbot toggle controls
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbot = document.getElementById('chatbot');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+    const chatbotForm = document.getElementById('chatbot-form');
+    const chatbotInput = document.getElementById('chatbot-input');
+
+    chatbotToggle.addEventListener('click', () => {
+      chatbot.classList.toggle('hidden');
+      if (!chatbot.classList.contains('hidden')) {
+        chatbotInput.focus();
+      }
+    });
+    chatbotClose.addEventListener('click', () => {
+      chatbot.classList.add('hidden');
+    });
+
+    // Simple chatbot responses (front-end only)
+    chatbotForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const userMessage = chatbotInput.value.trim();
+      if (!userMessage) return;
+
+      // Add user message
+      addMessage('You', userMessage);
+      chatbotInput.value = '';
+      chatbotInput.focus();
+
+      // Simulate bot response with delay
+      setTimeout(() => {
+        const botMessage = getBotReply(userMessage.toLowerCase());
+        addMessage('AMOAS Bot', botMessage);
+      }, 800);
+    });
+
+    function addMessage(sender, text) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('mb-3');
+      if (sender === 'You') {
+        messageDiv.classList.add('text-right');
+        messageDiv.innerHTML = `<div class="inline-block bg-indigo-600 text-white py-1 px-3 rounded-xl max-w-xs break-words">${text}</div>`;
+      } else {
+        messageDiv.classList.add('text-left');
+        messageDiv.innerHTML = `<div class="inline-block bg-gray-200 py-1 px-3 rounded-xl max-w-xs break-words">${text}</div>`;
+      }
+      chatbotMessages.appendChild(messageDiv);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function getBotReply(userText) {
+      if (userText.includes('hello') || userText.includes('hi')) {
+        return 'Hello! How can I assist you with real estate today?';
+      }
+      if (userText.includes('lease')) {
+        return 'We have great properties available for lease. Would you like to see some listings?';
+      }
+      if (userText.includes('sale')) {
+        return 'Sure! We have various properties for sale. Are you interested in houses, apartments, or land?';
+      }
+      if (userText.includes('agent')) {
+        return 'Our customer agents are here to help! Would you like their contact information?';
+      }
+      if (userText.includes('contact')) {
+        return 'You can contact us via the form on the Contact Us section, or call +254 700 123 456.';
+      }
+      return "I'm sorry, I didn't understand that. You can ask about property lease, sale, agents, or contact information.";
+    }
+  </script>
 </body>
 </html>
+
+```
+
